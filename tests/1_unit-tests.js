@@ -12,11 +12,11 @@ suite('Unit Tests', function () {
   assert.isNotNull(1, '1 is not null');
 });
     // #2
-    test('#isDefined, #isUndefined', function () {
-      assert.fail(null, 'null is not undefined');
-      assert.fail(undefined, 'undefined IS undefined');
-      assert.fail('hello', 'A string is not undefined');
-    });
+test('#isDefined, #isUndefined', function () {
+  assert.isUndefined(null, 'null is not undefined'); // null pode ser considerado indefinido
+  assert.isUndefined(undefined, 'undefined IS undefined'); // undefined é indefinido
+  assert.isDefined('hello', 'A string is not undefined'); // 'hello' é definido
+});
     // #3
     test('#isOk, #isNotOk', function () {
       assert.fail(null, 'null is false');
